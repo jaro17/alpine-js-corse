@@ -26,17 +26,20 @@
     <div class="uk-margin-medium-top">
         <form x-data="{ name: '' }" class="uk-width-1-3 uk-align-center">
             <input x-model="name" class="uk-input" type="text" placeholder="Name:">
-            <input x-model="name" class="uk-input" type="text" placeholder="Name:">
+            <input x-model="name" class="uk-input uk-margin-top" type="text" placeholder="Name:">
 
         </form>
     </div>
 
     <div class="uk-margin-medium-top">
         <form x-data="{ myColor: '' }" class="uk-width-1-3 uk-align-center">
-            <select class="uk-select">
-                <option></option>
-                <option></option>
+            <select x-model="myColor" class="uk-select">
+                <option>Select a color</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
             </select>
+            <p x-show="myColor" x-text="myColor" :style="{color: myColor}"></p>
         </form>
     </div>
 
