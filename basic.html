@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basics</title>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.21.11/dist/css/uikit.min.css"
+    />
+  </head>
+  <body>
+    <div class="uk-container">
+
+      <div class="uk-margin-medium-top">
+        <div x-data="{ message: 'Jesse is awesome!'}">
+          <p x-text="message"></p>
+        </div>
+      </div>
+
+      <h1 x-data="{ HText :  'This is our heading' }" x-text="'HText'"></h1>
+
+      <div
+        x-data="{ 
+        name :  'Billy',
+        email: 'billy@mail.com',
+        number: 12345
+        }"
+      >
+        <ul>
+          <li x-text="name"></li>
+          <li x-text="email"></li>
+          <li x-text="number"></li>
+        </ul>
+      </div>
+
+      <div x-data="userData">
+        <ul>
+            <li x-text="name"></li>
+            <li x-text="email"></li>
+            <li x-text="number"></li>
+          </ul>
+    </div>
+
+    <!-- Nesting -->
+    <div x-data="{ message: 'Jesse is very cool!'}">
+        <div x-data="{ message2: 'Jesse is very easy to learn!'}">
+            <div x-data="{ message3: 'Jesse is awesome!'}">
+                <p x-text="message"></p>
+                <p x-text="message2"></p>
+                <p x-text="message3"></p>
+              </div>
+          </div>
+      </div>
+
+      <div x-data="{ message: 'Jesse is very cool!'}">
+        <div x-data="{ message2: 'Jesse is very easy to learn!'}">
+            <div x-data="{ message3: 'Jesse is awesome!'}">
+                <p x-text="message + ' ' + message2 + ' ' + message3"></p>
+              </div>
+          </div>
+      </div>
+
+      <div x-data>
+        <p x-text="3 + 3"></p>
+      </div>
+
+    </div>
+
+   
+
+    <script>
+      function userData() {
+        return {
+          name: "John Doe",
+          email: "johndoe@example.com",
+          number: 98765,
+        };
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.11/dist/js/uikit.min.js"></script>
+  </body>
+</html>
